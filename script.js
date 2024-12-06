@@ -1,5 +1,14 @@
 function stringChop(str, size) {
-  // your code here
+  if (size <= 0) {
+    throw new Error("Chunk size must be greater than 0");
+  }
+
+  const chunks = [];
+  for (let i = 0; i < str.length; i += size) {
+    chunks.push(str.slice(i, i + size)); // Extract substring of length `size`
+  }
+
+  return chunks;
 }
 
 // Do not change the code below
